@@ -4,8 +4,11 @@ import { Clock, FileText, User } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const TodaySchedule = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <Card className="dashboard-card">
       <div className="flex items-center justify-between mb-6">
@@ -31,20 +34,20 @@ const TodaySchedule = () => {
             </Button>
           </div>
           
-          <div className="flex items-start space-x-4">
+          <div className="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-4">
             <Avatar className="h-12 w-12">
               <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Frank" alt="Student Avatar" />
               <AvatarFallback>FW</AvatarFallback>
             </Avatar>
             
             <div className="flex-1">
-              <div className="flex items-center space-x-2">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
                 <h3 className="font-semibold">Frank Wang</h3>
                 <span className="badge bg-blue-100 text-blue-700">Intermediate</span>
                 <span className="badge bg-yellow-100 text-yellow-700">TOEFL Prep</span>
               </div>
               
-              <div className="mt-2 grid grid-cols-2 gap-2">
+              <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="bg-white rounded p-2 border border-border">
                   <p className="text-xs font-medium text-muted-foreground">Focus Areas</p>
                   <div className="flex flex-wrap gap-1 mt-1">
@@ -63,12 +66,12 @@ const TodaySchedule = () => {
                 </div>
               </div>
               
-              <div className="flex items-center justify-between mt-3">
+              <div className="flex flex-wrap items-center justify-between mt-3 gap-2">
                 <div className="flex items-center space-x-2">
                   <FileText className="h-4 w-4 text-muted-foreground" />
                   <span className="text-sm text-muted-foreground">Lesson Materials</span>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <Button variant="ghost" size="sm" className="text-xs h-8">Student Notes</Button>
                   <Button variant="ghost" size="sm" className="text-xs h-8">Lesson Plan</Button>
                   <Button variant="outline" size="sm" className="text-xs h-8">Resources</Button>
