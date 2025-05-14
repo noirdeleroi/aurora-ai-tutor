@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				aurora: {
+					'blue': '#1EAEDB',
+					'light-blue': '#33C3F0',
+					'bright-blue': '#0FA0CE',
+					'gray': '#8E9196',
+					'light-gray': '#F1F1F1',
+					'dark-gray': '#222222'
+				},
+				skill: {
+					'listening': '#4B89DC',
+					'grammar': '#3498DB',
+					'vocabulary': '#1ABC9C',
+					'reading': '#2ECC71',
+					'speaking': '#F1C40F',
+					'pronunciation': '#E67E22',
+					'cultural': '#9B59B6'
 				}
 			},
 			borderRadius: {
@@ -84,11 +102,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-gentle': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-gentle': 'pulse-gentle 3s infinite ease-in-out',
+				'float': 'float 5s infinite ease-in-out'
 			}
 		}
 	},
